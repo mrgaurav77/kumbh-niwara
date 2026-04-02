@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,11 +15,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Hosts', href: '#hosts' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'Hosts', href: '/#hosts' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -32,9 +33,9 @@ const Navbar = () => {
           
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-saffron-600' : 'text-white drop-shadow-md'}`}>
+            <Link to="/" className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-saffron-600' : 'text-white drop-shadow-md'}`}>
               Kumbh<span className={isScrolled ? 'text-gray-800' : 'text-saffron-300'}>Nivas</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -54,19 +55,19 @@ const Navbar = () => {
 
           {/* Login/Signup Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className={`font-medium text-sm transition-colors ${
+            <Link to="/login" className={`font-medium text-sm transition-colors ${
               isScrolled ? 'text-gray-600 hover:text-saffron-500' : 'text-white hover:text-saffron-200'
             }`}>
               Log in
-            </button>
-            <button className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium text-sm transition-all shadow-sm ${
+            </Link>
+            <Link to="/signup" className={`flex items-center space-x-2 px-4 py-2 rounded-full font-medium text-sm transition-all shadow-sm ${
               isScrolled 
                 ? 'bg-saffron-500 text-white hover:bg-saffron-600' 
                 : 'bg-white text-saffron-600 hover:bg-gray-100'
             }`}>
               <User size={16} />
               <span>Sign Up</span>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -96,12 +97,12 @@ const Navbar = () => {
               </a>
             ))}
             <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col space-y-3 px-3">
-              <button className="text-left text-base font-medium text-gray-800">
+              <Link to="/login" className="block text-left text-base font-medium text-gray-800">
                 Log in
-              </button>
-              <button className="bg-saffron-500 text-white px-4 py-3 rounded-md font-medium text-center w-full">
+              </Link>
+              <Link to="/signup" className="block bg-saffron-500 text-white px-4 py-3 rounded-md font-medium text-center w-full">
                 Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import image from '../assets/1.jpg';
 import { Home, ArrowRight } from 'lucide-react';
 
 const Host = () => {
@@ -43,7 +44,7 @@ const Host = () => {
 
           <div className="w-full md:w-2/5">
             <img 
-              src="https://images.unsplash.com/photo-1518556323862-2eeaf4bd5b3b?q=80&w=2070&auto=format&fit=crop" 
+              src={image} 
               alt="Nashik Host Welcome" 
               className="w-full h-full object-cover rounded-tl-3xl md:rounded-tl-none md:rounded-l-3xl shadow-2xl"
             />
