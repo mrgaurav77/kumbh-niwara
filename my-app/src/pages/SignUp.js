@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 
 function SignUp() {
   return (
-    <div className="relative min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       {/* Background Image with Overlay */}
       <div
         className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -30,10 +30,10 @@ function SignUp() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md relative z-10">
-        <div className="bg-white/95 backdrop-blur-md py-8 px-4 shadow-2xl sm:rounded-2xl sm:px-10 border border-white/20">
+        <div className="bg-white/95 backdrop-blur-md py-8 px-4 shadow-2xl rounded-2xl sm:px-10 border border-white/20">
           <form className="space-y-5" action="#" method="POST">
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">First name</label>
                 <div className="mt-1">

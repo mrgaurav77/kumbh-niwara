@@ -47,12 +47,12 @@ const About = () => {
           </div>
 
           {/* Image */}
-          <div className="w-full md:w-1/2 relative">
+          <div className="w-full md:w-1/2 relative mt-10 md:mt-0">
             <div className="absolute inset-0 bg-saffron-200 rounded-2xl transform translate-x-4 translate-y-4"></div>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Kumbha_mela_on_ghats_of_the_river_godavari_nashik.jpg/1920px-Kumbha_mela_on_ghats_of_the_river_godavari_nashik.jpg"
               alt="Pilgrims at Kumbh Mela"
-              className="relative z-10 rounded-2xl shadow-xl w-full h-[500px] object-cover"
+              className="relative z-10 rounded-2xl shadow-xl w-full h-[350px] md:h-[500px] object-cover"
             />
 
             {/* Trust Badge */}

@@ -26,10 +26,10 @@ const Hero = () => {
         </p>
 
         {/* Search Bar - Airbnb Style */}
-        <div className="bg-white rounded-full p-2 w-full max-w-4xl shadow-2xl flex flex-col md:flex-row items-center border border-gray-100">
+        <div className="bg-white rounded-3xl md:rounded-full p-2 w-full max-w-4xl shadow-2xl flex flex-col md:flex-row items-center border border-gray-100">
           
-          <div className="flex-1 flex items-center w-full md:w-auto hover:bg-gray-100 rounded-full py-3 px-6 cursor-pointer transition-colors border-b md:border-b-0 md:border-r border-gray-200">
-            <MapPin className="text-saffron-500 mr-3" size={24} />
+          <div className="flex-1 flex items-center w-full md:w-auto hover:bg-gray-100 rounded-3xl md:rounded-full py-3 px-6 cursor-pointer transition-colors border-b md:border-b-0 md:border-r border-gray-200">
+            <MapPin className="text-saffron-500 mr-3 flex-shrink-0" size={24} />
             <div className="text-left w-full">
               <p className="text-xs font-bold text-gray-800 tracking-wide">LOCATION</p>
               <input 
@@ -40,8 +40,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex-1 flex items-center w-full md:w-auto hover:bg-gray-100 rounded-full py-3 px-6 cursor-pointer transition-colors border-b md:border-b-0 md:border-r border-gray-200">
-            <Calendar className="text-saffron-500 mr-3" size={24} />
+          <div className="flex-1 flex items-center w-full md:w-auto hover:bg-gray-100 rounded-3xl md:rounded-full py-3 px-6 cursor-pointer transition-colors border-b md:border-b-0 md:border-r border-gray-200">
+            <Calendar className="text-saffron-500 mr-3 flex-shrink-0" size={24} />
             <div className="text-left w-full">
               <p className="text-xs font-bold text-gray-800 tracking-wide">DATE</p>
               <input 
@@ -52,8 +52,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex-1 flex items-center w-full md:w-auto hover:bg-gray-100 rounded-full py-3 px-6 cursor-pointer transition-colors">
-            <Users className="text-saffron-500 mr-3" size={24} />
+          <div className="flex-1 flex items-center w-full md:w-auto hover:bg-gray-100 rounded-3xl md:rounded-full py-3 px-6 cursor-pointer transition-colors">
+            <Users className="text-saffron-500 mr-3 flex-shrink-0" size={24} />
             <div className="text-left w-full">
               <p className="text-xs font-bold text-gray-800 tracking-wide">GUESTS</p>
               <input 
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-auto mt-2 md:mt-0 px-2 md:px-0">
+          <div className="w-full md:w-auto mt-2 md:mt-0 p-2 md:p-0">
             <button className="w-full md:w-auto bg-saffron-500 hover:bg-saffron-600 text-white p-4 md:px-8 rounded-full flex items-center justify-center transition-colors shadow-md">
               <Search size={20} className="md:mr-2" />
               <span className="font-bold hidden md:inline">Find Stay</span>

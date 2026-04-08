@@ -42,11 +42,11 @@ const Host = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-2/5">
+          <div className="w-full md:w-2/5 h-64 md:h-auto">
             <img 
               src={image} 
               alt="Nashik Host Welcome" 
-              className="w-full h-full object-cover rounded-tl-3xl md:rounded-tl-none md:rounded-l-3xl shadow-2xl"
+              className="w-full h-full object-cover shadow-2xl"
             />
           </div>
 
