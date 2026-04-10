@@ -1,8 +1,19 @@
 import React from 'react';
 import image from '../assets/1.jpg';
 import { Home, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Host = () => {
+  const navigate = useNavigate();
+
+  const handleBecomeHost = () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/become-host');
+    } else {
+      navigate('/login');
+    }
+  };
   return (
     <section id="hosts" className="py-24 relative overflow-hidden bg-white">
       
@@ -34,7 +45,10 @@ const Host = () => {
             </ul>
 
             <div>
-              <button className="bg-white text-saffron-600 hover:bg-gray-50 flex items-center px-8 py-4 rounded-full font-bold shadow-lg transition-colors group">
+              <button 
+                onClick={handleBecomeHost}
+                className="bg-white text-saffron-600 hover:bg-gray-50 flex items-center px-8 py-4 rounded-full font-bold shadow-lg transition-colors group"
+              >
                 <Home className="mr-2" size={20} />
                 Become a Host
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
