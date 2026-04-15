@@ -14,6 +14,7 @@ function BecomeHost() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [img ,setImg] = useState();
 
   // Protect this route client-side just in case
   useEffect(() => {
@@ -34,11 +35,31 @@ function BecomeHost() {
     e.preventDefault();
     setError('');
     setSuccess('');
-    setLoading(true);
+    setLoading(true); 
 
     const token = localStorage.getItem('token');
+    let uploadedImageUrl = formData.imageUrl;
 
     try {
+      if (img) {
+        const uploadData = new FormData();
+        uploadData.append('image', img);
+        
+        const uploadRes = await fetch('http://localhost:5000/upload', {
+          method: 'POST',
+          body: uploadData
+        });
+        
+        const uploadResult = await uploadRes.json();
+        
+        if (!uploadRes.ok) {
+          throw new Error(uploadResult.error || "Image upload failed");
+        }
+        
+        // Save the correct relative path including the uploads folder
+        uploadedImageUrl = `uploads/${uploadResult.image.filename}`;
+      }
+
       const response = await fetch('http://localhost:5000/api/accommodations', {
         method: 'POST',
         headers: {
@@ -50,7 +71,7 @@ function BecomeHost() {
           description: formData.description,
           price: Number(formData.price),
           location: formData.location,
-          images: formData.imageUrl ? [formData.imageUrl] : []
+          images: uploadedImageUrl ? [uploadedImageUrl] : []
         }),
       });
 
@@ -136,11 +157,11 @@ function BecomeHost() {
               </div>
 
               <div>
-                <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 flex items-center">
+                <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 flex items-center"> 
                   <ImageIcon className="w-4 h-4 mr-2 text-saffron-500" /> Image URL (Optional)
                 </label>
                 <div className="mt-1">
-                  <input id="imageUrl" name="imageUrl" type="url" placeholder="https://example.com/image.jpg" value={formData.imageUrl} onChange={handleChange} className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent transition-colors" />
+                  <input onChange={(e)=>(setImg(e.target.files[0]))}  type='file' />
                 </div>
               </div>
             </div>
