@@ -70,14 +70,14 @@ The frontend is the visual interface clients will see.
    ```bash
    npm start
    ```
-   *This command will spin up the development environment, and automatically open your web app via `http://localhost:3000` in your default browser.*
+   *This command will spin up the development environment, and automatically open your web app via `http://localhost:5000` in your default browser.*
 
 ---
 
 ## 🌟 Usage Instructions
 
 Once both servers are running successfully:
-- **Navigation:** Open `http://localhost:3000` to view the beautiful KumbhNivas interface.
+- **Navigation:** Open `http://localhost:5000` to view the beautiful KumbhNivas interface.
 - **Authentication:** Explore signing up dynamic accounts or logging in via the navigation bar.
 - **Host Submission:** Authenticated users can navigate to "Become a Host" and input precise property listings securely which immediately writes directly to your structured database in MongoDB.
 
