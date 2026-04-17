@@ -8,11 +8,11 @@ const { protect } = require('../middleware/authMiddleware');
 // @access  Private (Requires Token)
 router.post('/', protect, async (req, res) => {
   try {
-    const { title, description, price, location, images } = req.body;
+    const { title, description, price, location, images, accommodationType, providingFood, guestsCount } = req.body;
 
     // Validate simple required fields
-    if (!title || !description || !price || !location) {
-      return res.status(400).json({ message: 'Please provide all required fields (title, description, price, location)' });
+    if (!title || !description || !price || !location || !accommodationType || !providingFood || !guestsCount) {
+      return res.status(400).json({ message: 'Please provide all required fields (title, description, price, location, accommodationType, providingFood, guestsCount)' });
     }
 
     const newAccommodation = await Accommodation.create({
@@ -22,6 +22,9 @@ router.post('/', protect, async (req, res) => {
       price,
       location,
       images: images || [],
+      accommodationType,
+      providingFood,
+      guestsCount,
     });
 
     res.status(201).json({

@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# KumbhNivas 🏡✨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+KumbhNivas is a full-stack platform designed to help locals host pilgrims visiting the Kumbh Mela and finding accommodations, built utilizing the **React.js** library for the Frontend and **Node.js/Express/MongoDB** for the Backend API.
 
-## Available Scripts
+This guide will walk you through the process of setting up and running the KumbhNivas project locally on your machine.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠️ Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before you begin, ensure you have the following installed on your system:
+- [Node.js](https://nodejs.org/en/) (v14 or higher recommended)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js)
+- [MongoDB](https://www.mongodb.com/) (Available locally, or create a free MongoDB Atlas Cloud account)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Setting Up the Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project consists of two separate applications that run synchronously: the Backend API and the React Frontend application. You will need roughly two separate terminal windows to run them concurrently.
 
-### `npm run build`
+### 1. Clone the Repository
+Clone this directory and navigate into the parent folder:
+```bash
+# Clone the corresponding repository via Git or extract the zipper folder
+cd Kumbh-Niwara
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Backend Setup
+The backend serves the API and controls database interactions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Navigate to the Backend Directory:**
+   ```bash
+   cd backend
+   ```
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Set Up Environment Variables:**
+   Create a `.env` file in the root of the `backend` folder (if it's not already supplied). You must declare your MongoDB connect credentials and a secure JWT Secret:
+   ```env
+   PORT=5000
+   MONGO_URI=mongodb+srv://<USERNAME>:<PASSWORD>@cluster.mongodb.net/kumbh-nivara?appName=Cluster0
+   JWT_SECRET=supersecretkumbhniwas123
+   ```
+   *(Note: Ensure you replace the placeholder URL with your actual Local or MongoDB Atlas URI).*
+4. **Start the Backend Server:**
+   ```bash
+   npm start
+   # or utilizing nodemon globally
+   node server.js
+   ```
+   *Your terminal will display "Server is running on port 5000" and connection states.*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Frontend Setup
+The frontend is the visual interface clients will see.
 
-### `npm run eject`
+1. **Navigate to the Frontend Directory (In a new terminal window):**
+   ```bash
+   # From the root of your project
+   cd my-app
+   ```
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+   *(Note: Because this project utilizes TailwindCSS and Lucide-React prominently, running npm install ensures all UI components load correctly out-of-the-box).*
+3. **Start the Frontend Client:**
+   ```bash
+   npm start
+   ```
+   *This command will spin up the development environment, and automatically open your web app via `http://localhost:3000` in your default browser.*
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌟 Usage Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Once both servers are running successfully:
+- **Navigation:** Open `http://localhost:3000` to view the beautiful KumbhNivas interface.
+- **Authentication:** Explore signing up dynamic accounts or logging in via the navigation bar.
+- **Host Submission:** Authenticated users can navigate to "Become a Host" and input precise property listings securely which immediately writes directly to your structured database in MongoDB.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📦 Tech Stack Summary
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Frontend:** React 19, TailwindCSS, React-Router-DOM
+- **Backend:** Node.js v18+, Express v5, Mongoose & MongoDB
+- **Security:** bcrypt hashing protocol, JSON Web Tokens (JWT)
+- **Utilities:** Multer (local image uploading storage)

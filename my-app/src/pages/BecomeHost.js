@@ -9,7 +9,10 @@ function BecomeHost() {
     description: '',
     price: '',
     location: '',
-    imageUrl: ''
+    imageUrl: '',
+    accommodationType: '',
+    providingFood: '',
+    guestsCount: ''
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -71,7 +74,10 @@ function BecomeHost() {
           description: formData.description,
           price: Number(formData.price),
           location: formData.location,
-          images: uploadedImageUrl ? [uploadedImageUrl] : []
+          images: uploadedImageUrl ? [uploadedImageUrl] : [],
+          accommodationType: formData.accommodationType,
+          providingFood: formData.providingFood,
+          guestsCount: Number(formData.guestsCount)
         }),
       });
 
@@ -162,6 +168,73 @@ function BecomeHost() {
                 </label>
                 <div className="mt-1">
                   <input onChange={(e)=>(setImg(e.target.files[0]))}  type='file' />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Type of Accommodation</label>
+              <div className="space-y-2">
+                {['house', 'flat/apartment', 'tent', 'beds in a shared room', 'room with your family'].map((type) => (
+                  <div key={type} className="flex items-center">
+                    <input
+                      id={`type-${type}`}
+                      name="accommodationType"
+                      type="radio"
+                      value={type}
+                      checked={formData.accommodationType === type}
+                      onChange={handleChange}
+                      required
+                      className="focus:ring-saffron-500 h-4 w-4 text-saffron-600 border-gray-300"
+                    />
+                    <label htmlFor={`type-${type}`} className="ml-3 block text-sm font-medium text-gray-700 capitalize">
+                      {type}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Are you providing food?</label>
+                <div className="flex items-center space-x-6">
+                  {['Yes', 'No'].map((option) => (
+                    <div key={option} className="flex items-center">
+                      <input
+                        id={`food-${option}`}
+                        name="providingFood"
+                        type="radio"
+                        value={option}
+                        checked={formData.providingFood === option}
+                        onChange={handleChange}
+                        required
+                        className="focus:ring-saffron-500 h-4 w-4 text-saffron-600 border-gray-300"
+                      />
+                      <label htmlFor={`food-${option}`} className="ml-2 block text-sm font-medium text-gray-700">
+                        {option}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="guestsCount" className="block text-sm font-medium text-gray-700">
+                  How many guests can stay over?
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="guestsCount"
+                    name="guestsCount"
+                    type="number"
+                    min="1"
+                    required
+                    placeholder="e.g. 2"
+                    value={formData.guestsCount}
+                    onChange={handleChange}
+                    className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent transition-colors"
+                  />
                 </div>
               </div>
             </div>

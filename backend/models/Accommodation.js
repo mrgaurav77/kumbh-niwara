@@ -26,6 +26,28 @@ const accommodationSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  accommodationType: {
+    type: String,
+    enum: ['house', 'flat/apartment', 'tent', 'beds in a shared room', 'room with your family'],
+    required: true,
+  },
+  providingFood: {
+    type: String,
+    enum: ['Yes', 'No'],
+    required: true,
+  },
+  guestsCount: {
+    type: Number,
+    required: true,
+  },
+  isFull: {
+    type: Boolean,
+    default: false,
+  },
+  isApproved: {
+    type: Boolean,
+    default: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
