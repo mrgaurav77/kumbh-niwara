@@ -1,7 +1,10 @@
 import React from 'react';
 import { Search, Map, CheckCircle, Navigation } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HowItWorks = () => {
+  const navigate = useNavigate();
+
   const steps = [
     {
       id: 1,
@@ -59,7 +62,10 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-saffron-600 hover:bg-saffron-700 transition-colors">
+          <button 
+            onClick={() => navigate('/accommodations')}
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-saffron-600 hover:bg-saffron-700 transition-colors"
+          >
             <Navigation className="mr-2" size={20} />
             Explore Stays Now
           </button>

@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import BecomeHost from './pages/BecomeHost';
+import Accommodations from './pages/Accommodations';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/become-host" element={<BecomeHost />} />
+        <Route path="/accommodations" element={<Accommodations />} />
       </Routes>
     </Router>
   );
