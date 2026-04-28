@@ -31,7 +31,7 @@ app.use('/api/accommodations', accommodationRoutes);
 
 // Root endpoint just for testing
 app.get('/', (req, res) => {
-  res.send('KumbhNivas API is running...');
+  res.send('KumbhNiwara API is running...');
 });
 
 // Start the server

@@ -32,7 +32,7 @@ const HowItWorks = () => {
         
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-bold tracking-wider text-saffron-600 uppercase mb-2">Simple Process</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900">How KumbhNivas Works</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900">How KumbhNiwara Works</h3>
           <p className="mt-4 text-lg text-gray-500">
             Your sacred journey deserves a peaceful stay. We've made it simple to find and book your accommodation in just three easy steps.
           </p>

@@ -20,7 +20,7 @@ const About = () => {
             </p>
 
             <p className="text-lg text-gray-600">
-              <span className="font-semibold text-saffron-600">KumbhNivas</span> bridges the gap between pilgrims and local residents. We offer a platform where devotees can find temporary accommodation hosted by verified locals, ensuring a peaceful and connected spiritual journey.
+              <span className="font-semibold text-saffron-600">KumbhNiwara</span> bridges the gap between pilgrims and local residents. We offer a platform where devotees can find temporary accommodation hosted by verified locals, ensuring a peaceful and connected spiritual journey.
             </p>
 
             <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">

@@ -82,7 +82,7 @@ function SignUp() {
           </h2>
         </div>
         <p className="text-center text-sm text-gray-200 drop-shadow-sm font-medium">
-          Join KumbhNiwas as a Pilgrim
+          Join KumbhNiwara as a Pilgrim
         </p>
       </div>
 

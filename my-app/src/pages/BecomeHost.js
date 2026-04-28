@@ -117,7 +117,7 @@ function BecomeHost() {
         <div className="bg-white py-8 px-6 shadow-xl rounded-2xl sm:px-10 border border-gray-100">
           
           <div className="mb-6 text-gray-600">
-            <p>Welcome, Host! Fill in the specific details below to add your property to KumbhNivas.</p>
+            <p>Welcome, Host! Fill in the specific details below to add your property to KumbhNiwara.</p>
           </div>
 
           {error && <div className="mb-4 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg relative">{error}</div>}

@@ -72,7 +72,7 @@ function Login() {
           </h2>
         </div>
         <p className="text-center text-sm text-gray-200 drop-shadow-sm font-medium">
-          Sign in to your KumbhNiwas account
+          Sign in to your KumbhNiwara account
         </p>
       </div>
 

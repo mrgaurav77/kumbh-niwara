@@ -1,8 +1,8 @@
-# KumbhNivas 🏡✨
+# KumbhNiwara 🏡✨
 
-KumbhNivas is a full-stack platform designed to help locals host pilgrims visiting the Kumbh Mela and finding accommodations, built utilizing the **React.js** library for the Frontend and **Node.js/Express/MongoDB** for the Backend API.
+KumbhNiwara is a full-stack platform designed to help locals host pilgrims visiting the Kumbh Mela and finding accommodations, built utilizing the **React.js** library for the Frontend and **Node.js/Express/MongoDB** for the Backend API.
 
-This guide will walk you through the process of setting up and running the KumbhNivas project locally on your machine.
+This guide will walk you through the process of setting up and running the KumbhNiwara project locally on your machine.
 
 ---
 
@@ -42,7 +42,7 @@ The backend serves the API and controls database interactions.
    ```env
    PORT=5000
    MONGO_URI=mongodb+srv://<USERNAME>:<PASSWORD>@cluster.mongodb.net/kumbh-nivara?appName=Cluster0
-   JWT_SECRET=supersecretkumbhniwas123
+   JWT_SECRET=supersecretkumbhniwara123
    ```
    *(Note: Ensure you replace the placeholder URL with your actual Local or MongoDB Atlas URI).*
 4. **Start the Backend Server:**
@@ -77,7 +77,7 @@ The frontend is the visual interface clients will see.
 ## 🌟 Usage Instructions
 
 Once both servers are running successfully:
-- **Navigation:** Open `http://localhost:5000` to view the beautiful KumbhNivas interface.
+- **Navigation:** Open `http://localhost:5000` to view the beautiful KumbhNiwara interface.
 - **Authentication:** Explore signing up dynamic accounts or logging in via the navigation bar.
 - **Host Submission:** Authenticated users can navigate to "Become a Host" and input precise property listings securely which immediately writes directly to your structured database in MongoDB.
 

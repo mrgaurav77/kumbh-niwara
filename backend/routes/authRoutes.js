@@ -4,14 +4,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// @route   POST /api/auth/register
-// @desc    Register a new user
-// @access  Public
+
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
 
-    // Validate email & password format, etc (optional but recommended)
     if (!name || !email || !password) {
       return res.status(400).json({ message: 'Please provide all required fields' });
     }
@@ -22,7 +19,6 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -46,15 +42,13 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// @route   POST /api/auth/login
-// @desc    Authenticate user & get token
-// @access  Public
+
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
     if (!email || !password) {
-       return res.status(400).json({ message: 'Please provide email and password' });
+      return res.status(400).json({ message: 'Please provide email and password' });
     }
 
     // Find user by email

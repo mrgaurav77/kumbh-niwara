@@ -1,4 +1,4 @@
-# KumbhNivas Dependencies
+# KumbhNiwara Dependencies
 
 While this is a strictly Node.js (JavaScript) and React based project that utilizes `package.json` for dependency management instead of `requirements.txt`, here is a comprehensive list of the core dependencies and their versions utilized in both the Backend and Frontend to run the application. 
 

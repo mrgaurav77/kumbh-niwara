@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-saffron-600' : 'text-white drop-shadow-md'}`}>
-              Kumbh<span className={isScrolled ? 'text-gray-800' : 'text-saffron-300'}>Nivas</span>
+              Kumbh<span className={isScrolled ? 'text-gray-800' : 'text-saffron-300'}>Niwara</span>
             </Link>
           </div>
 
